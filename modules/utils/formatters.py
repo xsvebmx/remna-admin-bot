@@ -221,7 +221,7 @@ def format_user_details_safe(user):
         message += f"🔗 URL подписки: Не указан\n\n"
     
     message += f"📊 Статус: {status_emoji} {user['status']}\n"
-    message += f"📈 Трафик: {format_bytes(user['usedTrafficBytes'])}/{format_bytes(user['trafficLimitBytes'])}\n"
+    message += f"📈 Трафик: {format_bytes(user.get('usedTrafficBytes', 0))}/{format_bytes(user.get('trafficLimitBytes', 0))}\n"
     message += f"🔄 Стратегия сброса: {user['trafficLimitStrategy']}\n"
     message += f"{expire_status} Истекает: {expire_text}\n\n"
     

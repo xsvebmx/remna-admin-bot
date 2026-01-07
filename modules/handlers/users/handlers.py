@@ -2790,7 +2790,7 @@ async def confirm_delete_user(update: Update, context: ContextTypes.DEFAULT_TYPE
             f"👤 **Имя:** `{escape_markdown(user['username'])}`",
             f"🆔 **UUID:** `{user['uuid']}`",
             f"📊 **Статус:** {user['status']}",
-            f"📈 **Использовано трафика:** {format_bytes(user['usedTrafficBytes'])}",
+            f"📈 **Использовано трафика:** {format_bytes(user.get('usedTrafficBytes', 0))}",
             f"📅 **Дата истечения:** {user.get('expireAt', 'Не указана')[:10]}",
             "",
             "💀 **ЭТО ДЕЙСТВИЕ НЕЛЬЗЯ ОТМЕНИТЬ!**",
