@@ -42,8 +42,8 @@ Reference for eGames: [`wiki.egam.es`](https://wiki.egam.es/)
 ```bash
 sudo mkdir -p /opt/remna-bot
 cd /opt/remna-bot
-curl -o .env https://raw.githubusercontent.com/DigneZzZ/remna-admin-bot/main/.env.example
-curl -o docker-compose.yml https://raw.githubusercontent.com/DigneZzZ/remna-admin-bot/main/docker-compose-prod.yml
+curl -o .env https://raw.githubusercontent.com/xsvebmx/remna-admin-bot/main/.env.example
+curl -o docker-compose.yml https://raw.githubusercontent.com/xsvebmx/remna-admin-bot/main/docker-compose-prod.yml
 ```
 2. Configure environment variables:
 ```bash
@@ -60,7 +60,7 @@ docker compose logs -f
 
 ### Manual Run
 ```bash
-git clone https://github.com/DigneZzZ/remna-admin-bot.git
+git clone https://github.com/xsvebmx/remna-admin-bot.git
 cd remna-admin-bot
 pip install -r requirements.txt
 cp .env.example .env
