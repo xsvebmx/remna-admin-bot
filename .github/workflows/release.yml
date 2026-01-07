@@ -105,7 +105,7 @@ jobs:
       - name: Update latest release info
         run: |
           echo "✅ Release ${{ steps.version.outputs.version }} created successfully!"
-          echo "🐳 Docker Image: ghcr.io/dignezzz/remna-admin-bot:${{ steps.version.outputs.version }}"
+          echo "🐳 Docker Image: ghcr.io/xsvebmx/remna-admin-bot:${{ steps.version.outputs.version }}"
           echo "📦 Release Assets: docker-compose-prod.yml, .env.production, deploy scripts"
           if [ "${{ steps.docker_check.outputs.docker_exists }}" = "true" ]; then
             echo "✅ Docker image is available"
