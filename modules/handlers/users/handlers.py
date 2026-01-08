@@ -1004,8 +1004,7 @@ async def show_user_details(update: Update, context: ContextTypes.DEFAULT_TYPE, 
     await safe_edit_message(  
         update.callback_query,  
         message,  
-        keyboard,
-        None
+        keyboard
     )
 
     context.user_data["current_user"] = user
