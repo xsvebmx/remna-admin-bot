@@ -1000,21 +1000,11 @@ async def show_user_details(update: Update, context: ContextTypes.DEFAULT_TYPE, 
 
     keyboard = SelectionHelper.create_user_info_keyboard(uuid, action_prefix="user_action", is_admin=context.user_data.get('is_admin', False))
 
-    try:
-        await update.callback_query.edit_message_text(
-            text=message,
-            reply_markup=keyboard
-        )
-    except Exception as e:
-        logger.error(f"Error sending user details: {e}")
-        try:
-            await update.callback_query.edit_message_caption(
-                caption=message,
-                reply_markup=keyboard
-            )
-        except Exception as e2:
-            logger.error(f"Fallback to edit_message_caption failed: {e2}")
-            await update.callback_query.answer("❌ Ошибка при отображении данных")
+    await safe_edit_message(  
+        update.callback_query,  
+        message,  
+        keyboard  
+    )
 
     context.user_data["current_user"] = user
     return SELECTING_USER
